@@ -12,6 +12,7 @@ let jobCount = document.getElementById("job-count");
 function totalCardCount(){
     let cards = document.querySelectorAll(".card");
     totalCount.innerText = cards.length;
+    jobCount.innerText = cards.length;
    
 }
 totalCardCount();
