@@ -80,6 +80,7 @@ rejectToggle.addEventListener('click', function(){
 
 function filterUpdate(){
     let visibleCount = 0;
+    let totalCards = cards.length;
     for(let card of cards){
         card.classList.remove("hidden");
         const stat = card.querySelector(".change-job-text").innerText;
@@ -102,5 +103,9 @@ function filterUpdate(){
     else{
         noCardSection.classList.add("hidden");
     }
-    jobCount.innerText = visibleCount;
+    if (currentFilter == "all"){
+        jobCount.innerText = `${totalCards}`;
+    }else{
+        jobCount.innerText = `${visibleCount} of ${totalCards}`;
+    }
 }
