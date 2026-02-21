@@ -5,17 +5,20 @@ let allToggle = document.getElementById("all-toggle");
 let interToggle = document.getElementById("inter-toggle");
 let rejectToggle = document.getElementById("reject-toggle");
 
-let cards = document.querySelectorAll(".card");
+
 let totalCount = document.getElementById("totalCount");
-totalCount.innerText = cards.length;
 let jobCount = document.getElementById("job-count");
-jobCount.innerText = cards.length;
+
+function totalCardCount(){
+    let cards = document.querySelectorAll(".card");
+    totalCount.innerText = cards.length;
+    jobCount.innerText = cards.length;
+}
+totalCardCount();
 
 let noCardSection = document.getElementById("no-card-available");
 noCardSection.classList.add("hidden");
 
-let InterCards = [];
-let RejectCards = [];
 
 for(let btn of interBtn){
     btn.addEventListener('click', function(e){
@@ -67,18 +70,23 @@ let currentFilter = "all";
 
 allToggle.addEventListener('click', function(){
     currentFilter = "all";
+    colorToggle();
     filterUpdate();
+    
 })
 interToggle.addEventListener('click', function(){
     currentFilter = "Interview";
+    colorToggle();
     filterUpdate();
 })
 rejectToggle.addEventListener('click', function(){
     currentFilter = "Rejected";
+    colorToggle();
     filterUpdate();
 })
 
 function filterUpdate(){
+    let cards = document.querySelectorAll(".card");
     let visibleCount = 0;
     let totalCards = cards.length;
     for(let card of cards){
@@ -109,3 +117,31 @@ function filterUpdate(){
         jobCount.innerText = `${visibleCount} of ${totalCards}`;
     }
 }
+
+      allToggle.classList.add("bg-blue-500","text-white");
+     
+function colorToggle(){
+       allToggle.classList.remove("bg-blue-500","text-white");
+       interToggle.classList.remove("bg-blue-500","text-white");
+       rejectToggle.classList.remove("bg-blue-500","text-white");
+
+       allToggle.classList.add("bg-white","text-gray-500");
+       interToggle.classList.add("bg-white","text-gray-500");
+       rejectToggle.classList.add("bg-white","text-gray-500");
+
+       
+
+       if(currentFilter === "all"){
+        allToggle.classList.remove("bg-white","text-gray-500");
+        allToggle.classList.add("bg-blue-500","text-white");
+       }
+       else if(currentFilter === "Interview"){
+        interToggle.classList.remove("bg-white","text-gray-500");
+        interToggle.classList.add("bg-blue-500","text-white");
+       }
+       else if(currentFilter === "Rejected"){
+        rejectToggle.classList.remove("bg-white","text-gray-500");
+        rejectToggle.classList.add("bg-blue-500","text-white");
+       }
+}
+
