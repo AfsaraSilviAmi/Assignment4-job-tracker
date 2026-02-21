@@ -12,7 +12,7 @@ let jobCount = document.getElementById("job-count");
 function totalCardCount(){
     let cards = document.querySelectorAll(".card");
     totalCount.innerText = cards.length;
-    jobCount.innerText = cards.length;
+   
 }
 totalCardCount();
 
@@ -145,3 +145,16 @@ function colorToggle(){
        }
 }
 
+let deleteBtn = document.querySelectorAll(".delete-btn");
+
+for(let del of deleteBtn){
+    del.addEventListener('click',function(e){
+       let card = e.target.closest(".card");
+       card.remove();
+       totalCardCount();
+       updateCount();
+       filterUpdate();
+      
+    })
+    
+}
