@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+
+    .font-geist{
+        font-family: "Geist", sans-serif;
+    }
+
+</style>
+</head>
+<body class="font-geist bg-[#F8FAFC]">
+    <main class="w-11/12 mx-auto pt-8">
+        <!-- dashboard -->
+       <section>
+           <h1 class="font-bold text-4xl text-[#002C5C] mb-5">Job Application Tracker</h1>
+           <div class="grid grid-cols-3 gap-5">
+
+           <div class="bg-white p-5 rounded-xl">
+            <p>Total</p>
+            <p id="totalCount" class="text-[#002C5C] font-bold text-3xl">0</p>
+           </div>
+
+           <div class="bg-white p-5 rounded-xl">
+            <p>Interview</p>
+            <p id = "interviewCount" class="text-[#10B981] font-bold text-3xl">0</p>
+           </div>
+
+           <div class="bg-white p-5 rounded-xl">
+            <p>Rejected</p>
+            <p id = "rejectedCount" class="text-[#EF4444] font-bold text-3xl">0</p>
+           </div>
+
+           </div>
+       </section>
+       <!-- available job -->
+        <section>
+            <div class="mt-15 flex justify-between">
+                <p class="text-[#002C5C] font-bold text-2xl">Available Jobs</p>
+                <p class="text-[#64748B] text-lg"><span>0</span> jobs</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
